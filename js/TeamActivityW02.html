@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <title>Team Activyt w02</title>
+    </head>
+    <body>
+        
+        <h2>01</h2>
+        <input id= "inputReq1" type = "text">
+        <button id="bttnReq1" onclick="showInput()">Submit</button>
+        <div id='outputReq1'></div>
+
+        <h2>02</h2>
+        <input id= "inputReq2" placeholder="Enter a number" type = "text">
+        <button id="bttnReq2" onclick="sumNumber()">Submit</button>
+        <div id='outputReq2'></div>
+
+        <script>
+            //Parse numbers
+            function getNum(numId){
+                const number = document.getElementById(numId).value;
+                const numFloat = parseFloat(number);
+                if (numFloat !== NaN){
+                    return numFloat;
+                } else return 0;
+            }
+
+            //Requirement 1
+            function showInput(){
+                const input = document.getElementById("inputReq1").value;
+                const output = document.getElementById("outputReq1");
+                output.innerHTML = 'You typed: ' + input;
+            }
+
+            //Requirement 2
+            function sumNumber(){
+                const input = document.getElementById("inputReq2").value;
+                const output = document.getElementById("outputReq2");
+                const inputFloat = getNum("inputReq2");
+                output.innerHTML = "Total: " +sum(inputFloat);
+            }
+
+            function sum(number){
+                let total = 0;
+                for (let i =1; i <= number; i++){
+                    total += i;
+                }
+                return total;
+            }
+        </script>
+    </body>
+</html>
